@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import LoginForm from "@/layouts/client/LoginForm";
+import LoginForm from "@/layouts/client/landing-page/LoginForm";
 import { ChevronLeft } from "lucide-react";
 
 export default function LoginPage() {

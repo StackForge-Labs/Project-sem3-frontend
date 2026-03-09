@@ -13,10 +13,10 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import { Field, FieldGroup } from "@/components/ui/field";
+} from "@/components/common/ui/card";
+import { Field, FieldGroup } from "@/components/common/ui/field";
 
-import { Input } from "@/components/ui/input";
+import { Input } from "@/components/common/ui/input";
 import { loginSchema } from "@/schemas/auth/login.schema";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
