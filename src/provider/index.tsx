@@ -3,6 +3,7 @@
 import { ReactNode } from "react";
 import QueryProvider from "@/provider/QueryProvider";
 import { SidebarProvider } from "@/contexts/SidebarContext";
+import { Toaster } from "sonner";
 
 interface ProvidersProps {
   children: ReactNode;
@@ -11,7 +12,10 @@ interface ProvidersProps {
 export default function Providers({ children }: ProvidersProps) {
   return (
     <QueryProvider>
-      <SidebarProvider>{children}</SidebarProvider>
+      <SidebarProvider>
+        {children}
+        <Toaster position="top-right" />
+      </SidebarProvider>
     </QueryProvider>
   );
 }
