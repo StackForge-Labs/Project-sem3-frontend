@@ -2,7 +2,7 @@
 
 # 🚀 NextApp
 
-### Nền tảng web hiện đại được xây dựng với Next.js 15 & React 19
+### Nền tảng web hiện đại được xây dựng với Next.js 16 & React 19
 
 [![Next.js](https://img.shields.io/badge/Next.js-16.1-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.2-61dafb?style=for-the-badge&logo=react)](https://react.dev/)
@@ -17,7 +17,7 @@
 
 ## ✨ Tính năng
 
-- ⚡ **Next.js 15** - App Router, Server Components, Server Actions
+- ⚡ **Next.js 16** - App Router, Server Components, Server Actions
 - ⚛️ **React 19** - Hooks mới nhất, Form Actions, Optimistic Updates
 - 🎨 **Tailwind CSS 4** - Utility-first CSS framework
 - 📘 **TypeScript** - Type safety với strict mode
@@ -80,8 +80,10 @@ src/
 
 ### Yêu cầu
 
-- Node.js 20.x trở lên
-- npm hoặc yarn hoặc pnpm
+- Node.js 22.13.0+ (hoặc 22.x LTS)
+- npm 10.0.0+
+
+> 💡 Project sử dụng `.nvmrc` để lock Node.js version. Nếu dùng nvm, chạy `nvm use` để tự động switch.
 
 ### Cài đặt
 
@@ -90,7 +92,7 @@ src/
 git clone <repository-url>
 cd next
 
-# Cài đặt dependencies
+# Cài đặt dependencies (đảm bảo dùng Node.js 22.13.0+)
 npm install
 
 # Copy environment variables
@@ -102,6 +104,22 @@ npm run dev
 
 Mở [http://localhost:3000](http://localhost:3000) để xem kết quả.
 
+### Version Management
+
+Project sử dụng các file sau để đảm bảo consistency giữa các môi trường:
+
+- `.nvmrc` - Lock Node.js version (22.13.0)
+- `.npmrc` - Cấu hình npm (engine-strict, save-exact)
+- `package.json` engines - Enforce Node >=22.13.0 <23.0.0
+
+```bash
+# Sử dụng nvm (recommended)
+nvm use
+
+# Hoặc kiểm tra version thủ công
+node --version  # Phải >= 22.13.0 và < 23.0.0
+```
+
 ### Scripts
 
 ```bash
@@ -110,26 +128,6 @@ npm run build    # Build production
 npm run start    # Chạy production server
 npm run lint     # Chạy ESLint
 ```
-
-## 🐳 Docker
-
-### Development với Docker
-
-```bash
-# Build image
-make build
-
-# Start container
-make up
-
-# Xem logs
-make logs
-
-# Stop container
-make down
-```
-
-> 📖 Xem chi tiết: [DOCKER.md](./DOCKER.md)
 
 ## 📝 Quy tắc code
 
