@@ -8,6 +8,7 @@
 [![React](https://img.shields.io/badge/React-19.2-61dafb?style=for-the-badge&logo=react)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178c6?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0-38bdf8?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![CI](https://img.shields.io/github/actions/workflow/status/YOUR_USERNAME/YOUR_REPO/ci.yml?branch=main&style=for-the-badge&label=CI)](https://github.com/YOUR_USERNAME/YOUR_REPO/actions)
 
 [Demo](https://your-demo.vercel.app) • [Tài liệu](./PROJECT_STRUCTURE.md) • [Docker](./DOCKER.md)
 
@@ -127,6 +128,27 @@ npm run dev      # Chạy development server
 npm run build    # Build production
 npm run start    # Chạy production server
 npm run lint     # Chạy ESLint
+npm run type-check  # Type checking
+npm test         # Chạy tests
+```
+
+## 🔄 CI/CD
+
+Project sử dụng GitHub Actions để tự động test và build:
+
+### CI Pipeline
+1. **Lint & Type Check** - ESLint + TypeScript validation
+2. **Test** - Run test suite
+3. **Build** - Production build verification
+
+Pipeline chạy tự động khi:
+- Push lên `main` hoặc `develop`
+- Tạo Pull Request vào `main` hoặc `develop`
+
+### Local CI Check
+```bash
+# Chạy tất cả checks như CI
+npm run lint && npm run type-check && npm test && npm run build
 ```
 
 ## 📝 Quy tắc code
