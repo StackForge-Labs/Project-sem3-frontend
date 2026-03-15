@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { geistSans, geistMono } from "@/lib/fonts";
 import { APP_NAME, APP_DESCRIPTION } from "@/constants";
 import Providers from "@/provider";
@@ -23,6 +24,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Providers>{children}</Providers>
+        <SpeedInsights />
       </body>
     </html>
   );
